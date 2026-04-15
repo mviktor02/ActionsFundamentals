@@ -5,7 +5,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       - name: Run hello world action
         uses: mviktor02/hello-world-docker-action@v1
         id: hello-world
