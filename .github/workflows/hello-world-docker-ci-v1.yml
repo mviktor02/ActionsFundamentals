@@ -1,0 +1,16 @@
+name: Hello World v1
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run hello world action
+        uses: mviktor02/hello-world-docker-action@v1
+        id: hello-world
+        with:
+          who-to-greet: '@mviktor02'
+      - name: Output time
+        run: |
+          echo "Time: ${{ steps.hello-world.outputs.time }}"
